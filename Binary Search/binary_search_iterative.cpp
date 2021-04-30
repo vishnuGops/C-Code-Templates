@@ -5,9 +5,10 @@
 
 using namespace std;
 
-int binarySearch(vector<int> arr, int l, int r, int find)
+int binarySearch(vector<int> arr, int find)
 {
-
+    int l = 0;
+    int r = arr.size() - 1;
     while (l <= r)
     {
         int mid = l + (r - l) / 2;
@@ -27,10 +28,9 @@ int binarySearch(vector<int> arr, int l, int r, int find)
 
 int main()
 {
-    vector<int> arr = {12, 3, 4, 56, 6, 76, 7, 21, 2, 113, 4, 6, 22, 47, 2, 26, 5, 7, 23};
+    vector<int> arr = {12, 3, 4, 56, 6, 76, 17};
     sort(arr.begin(), arr.end());
-    int find = 7;
-    int n = arr.size();
+    int find = 17;
 
     cout << "The sorted array is:" << endl;
     for (auto i : arr)
@@ -40,7 +40,7 @@ int main()
     cout << endl;
     cout << "The element to search for: " << find << endl;
 
-    int result = binarySearch(arr, 0, n - 1, find);
+    int result = binarySearch(arr, find);
 
     (result == -1) ? cout << "The element could not be found"
                    : cout << "The element found at index: " << result;
