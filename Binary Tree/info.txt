@@ -1,0 +1,42 @@
+Definition: a tree data structure is which each node has at most 2 children.
+ which are reffered as left and right child.
+ Root is the starting or the top most node and the nodes with no children are called leaf node.
+
+
+What all data do we need to initialize: Data structure
+    value - value of node
+    left - pointing to empty address
+    right - pointing to empty address
+
+Tree traversals: to traverse through large data quickly and efficiently. 
+
+work : print the node
+then move
+
+Pre-order: work -> move left -> move right
+in-order: move left -> work -> move right
+post-order: move left -> move right -> work 
+
+height or depth of tree: Distance from the root node to the last leaf node
+
+
+Balancing the tree: height difference between left and right children is at most 1
+
+number of nodes: O(branching factor ^ height)
+
+
+Determining the height of the tree : depends if the tree is balanced or not
+
+    if tree is balanced, then height is simple logarithmic to the number of 
+    nodes in the tree
+
+    height: O(log N) for balanced and up tp O(N) for unbalanced
+
+Binary DFS Template:
+
+    Base Case : Prevent function from recursing infinitely. what to do when we get to leaf node
+    Recursive call : Question: Top down process - what is general recirsive call
+                     Answer: Bottom up process - what we need to return back up
+
+
+
