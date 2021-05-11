@@ -53,7 +53,9 @@ int leftmost_one(vector<vector<int>> mat)
         if (index != -1)
         {
             leftmost = min(leftmost, index);
-            right = leftmost;
+            right = leftmost; //will cut down how many coloumns i need to traverse through
+            if (right == 0)
+                break;
         }
     }
     return leftmost;
@@ -62,7 +64,7 @@ int leftmost_one(vector<vector<int>> mat)
 int main()
 {
 
-    vector<vector<int>> mat = {{0, 0, 1, 1}, {0, 0, 1, 1}, {0, 0, 1, 1}, {0, 0, 0, 1}};
+    vector<vector<int>> mat = {{0, 0, 1, 1}, {0, 1, 1, 1}, {0, 0, 1, 1}, {0, 0, 0, 1}};
 
     cout << "Leftmost index of 1: " << leftmost_one(mat);
 }
