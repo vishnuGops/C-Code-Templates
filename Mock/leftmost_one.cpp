@@ -17,10 +17,10 @@
 
 using namespace std;
 
-int binarySearch(vector<int> row, int target)
+int binarySearch(vector<int> row, int left, int right, int target)
 {
-    int left = 0;
-    int right = row.size();
+    // int left = 0;
+    // int right = row.size();
     while (left + 1 < right)
     {
         int mid = left + (right - left) / 2;
@@ -44,15 +44,17 @@ int binarySearch(vector<int> row, int target)
 
 int leftmost_one(vector<vector<int>> mat)
 {
-    int index = INT_MAX;
+    int index;
     int leftmost = INT_MAX;
+    int right = mat[0].size();
     for (int i = 0; i < mat.size(); i++)
     {
-        index = binarySearch(mat[i], 1);
-        if (index == -1)
-            cout << "No one found" << endl;
-        else
+        index = binarySearch(mat[i], 0, right, 1);
+        if (index != -1)
+        {
             leftmost = min(leftmost, index);
+            right = leftmost;
+        }
     }
     return leftmost;
 }
@@ -60,7 +62,7 @@ int leftmost_one(vector<vector<int>> mat)
 int main()
 {
 
-    vector<vector<int>> mat = {{0, 1, 1, 1}, {0, 0, 1, 1}, {0, 1, 1, 1}, {0, 0, 0, 1}};
+    vector<vector<int>> mat = {{0, 0, 1, 1}, {0, 0, 1, 1}, {0, 0, 1, 1}, {0, 0, 0, 1}};
 
     cout << "Leftmost index of 1: " << leftmost_one(mat);
 }
