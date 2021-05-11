@@ -39,3 +39,19 @@ Binary DFS Template:
                      Answer: Bottom up process - what we need to return back up
 
  
+
+
+Pathrise Binary Tree: Introduction
+
+A binary tree is a tree data structure in which each node has at most two 
+children, which are referred to as the left child and the right child.
+
+The key concept we’ll be discussing in this pre-workshop is the idea of a 
+Binary Tree as a Recursive Data Structure. The reason behind this is that 
+many questions involving Binary Trees, boil down to a recursion problem, due to 
+their structure.
+
+Recursive data structure: A recursive data structure can be defined as a structure 
+which is composed of smaller/simpler versions of the same data structure. In the case
+of Binary Trees, at a particular node, the left and right subtrees are instances of 
+smaller Binary Trees, that together make up the entire Tree.
