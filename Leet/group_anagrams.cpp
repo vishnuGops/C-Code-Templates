@@ -17,14 +17,15 @@ vector<vector<string>> groupAnagram(vector<string> &strs)
     for (int i = 0; i < n; i++)
     {
         string temp = strs[i];
+
         sort(temp.begin(), temp.end());
 
-        if (str.count(temp) == 0) //new anagram
+        if (str.count(temp) == 0)
         {
             str[temp] = sol.size();
             sol.push_back({strs[i]});
         }
-        else //not new
+        else
         {
             int index = str[temp];
             sol[index].push_back(strs[i]);
