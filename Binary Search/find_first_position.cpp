@@ -37,19 +37,20 @@ int binarySearch(vector<int> arr, int target)
 int main()
 {
     vector<int> arr = {2, 2, 2, 2, 3, 1, 4, 2, 2, 4, 2, 1};
+    vector<int> arr1 = {0, 0, 1, 1, 1, 1, 1};
     sort(arr.begin(), arr.end());
 
-    int target = 2;
+    int target = 1;
 
     cout << "The sorted array is:" << endl;
-    for (auto i : arr)
+    for (auto i : arr1)
     {
         cout << i << " ";
     }
     cout << endl;
     cout << "The target is : " << target << endl;
 
-    int result = binarySearch(arr, target);
+    int result = binarySearch(arr1, target);
     cout << "The first position of target element is at index : " << result;
     return 0;
 }
