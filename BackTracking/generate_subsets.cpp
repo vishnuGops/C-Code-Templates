@@ -7,20 +7,27 @@
 using namespace std;
 
 //vector<string> res;
-void generateSubstring(string val, int i, int n)
+void generateSubstring(string val, string temp, int i)
 {
-    //base condition to avoid dealend
-    if (i == n - 1)
+    //no deadends
+
+    if (i == val.length())
     {
-        cout <<
+        cout << temp << endl;
+        return;
+    }
+    else
+    {
+        generateSubstring(val, temp + val[i], i + 1);
+        generateSubstring(val, temp, i + 1);
     }
 }
 
 int main()
 {
     int count = 0;
-    string val = "hello";
+    string val = "abc";
     string str = "";
-    generateSubstring(val, 0, val.length());
+    generateSubstring(val, str, 0);
     //return res;
 }

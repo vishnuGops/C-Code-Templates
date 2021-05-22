@@ -1,0 +1,60 @@
+Most of the backtracking problems are on subsets or permutations
+
+
+1)Model a decision tree (problem solving)
+2) DFS to traverse through the tree
+
+
+Types of problems:
+1) Feasibility: is there a vaild solution
+2) Enumeration: print all valid solutions
+3) counting: How many valid soltuions are there?
+4) Optimization: Find solution with highest score
+
+
+Enumeration is best solved using backtracking.
+
+No Optimization, so finding all possible solutions is where backtracking 
+is important 
+
+When you meet dead end that is condition is not true, you backtrack and traverse 
+other options
+
+
+Tips:
+1) Detect dead ends and prune them early
+2) Try model tree in a why to avoid repeated nodes
+3) Optimize decision tree to be smaller since large tree takes more time to traverse
+
+
+Questions to think about before solving:
+-What are partial solution?
+-what are children of partial solution?
+-how to identify a valid solution?
+-how to identify a dead end?
+-what is complete solution?
+-how big is the tree?
+-what can we prune?
+
+
+
+Template
+
+
+def backtracking(partialsol){
+    if deadend(partialsol){
+        return
+    }
+
+    if isFull(partialsol){
+        do the processing
+        print(partialsol)
+    }
+    else
+    {
+        for child in children(partialsol)
+            backtracking(child)
+    }
+}
+
+backtracking(emptysol)
