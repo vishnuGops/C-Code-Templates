@@ -18,7 +18,6 @@ public:
 //recursive function to calculate the max depth of the binary tree
 int maxDepth(node *node)
 {
-
     if (node == NULL)
         return 0;
 
@@ -30,7 +29,7 @@ int maxDepth(node *node)
         if (left_depth >= right_depth)
             return left_depth + 1;
         else
-            return right_depth + 1; //make sure to add 1 to consider the root as well
+            return right_depth + 1;
     }
 }
 

@@ -18,13 +18,13 @@ public:
 
 int minDepth(node *node)
 {
-
     if (node == NULL)
         return 0;
 
-    //check to see if root has no kids
     if (node->left == NULL && node->right == NULL)
+    {
         return 1;
+    }
 
     int left_depth = INT_MAX;
     int right_depth = INT_MAX;
@@ -55,7 +55,7 @@ int main()
     root->left = newNode(2);
     root->right = newNode(3);
 
-    //root->left->right = newNode(4);
+    root->left->right = newNode(4);
     //root->left->left = newNode(8);
 
     root->right->right = newNode(5);
@@ -70,7 +70,7 @@ tree visual
 
         1
     2       3
-           6   5
+      4    6   5
                     10
 
 Depth should be 4
