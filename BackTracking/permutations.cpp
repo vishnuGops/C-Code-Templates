@@ -5,37 +5,36 @@
 #include <algorithm>
 
 using namespace std;
-
-void generatePerm(vector<int> temp, vector<int> val)
+//vector<vector<int>> ans;
+void generatePerm(vector<int> arr, int n, int c)
 {
     //no deadends
     //full solution is same size as the array
-    if (temp.size() == val.size())
+    if (n == c)
     {
-        for (int i = 0; i < val.size(); i++)
+        for (int i = 0; i < arr.size(); i++)
         {
-            cout << val[i] << " ";
-        }
-        cout << endl;
-        return;
-    }
-    else
-    {
-        for (int j = 0; j < val.size(); j++)
-        {
-            for (int k = 0; k < temp.size(); k++)
+            for (int x = 0; x < n; x++)
             {
-                if (val[j] !=)
+                cout << arr[x] << " ";
             }
+            cout << endl;
+            return;
         }
+    }
+    for (int i = c; i < n; i++)
+    {
+        swap(arr[i], arr[c]);
+        generatePerm(arr, n, c + 1);
+        swap(arr[i], arr[c]);
     }
 }
 
 int main()
 {
     vector<int> arr = {1, 2, 3};
-    vector<int> temp = {};
-    generatePerm(temp, arr);
+    int n = arr.size();
+    generatePerm(arr, n, 0);
 
     //return res;
 }
